@@ -4,42 +4,35 @@
 
 ## Homework Structure
 
-Tema se foloseste de doua clase principale pentru a executa si rula jocurile:
+The homework uses two main classes to execute and run the games:
 
-**AppManager** -> clasa care pregateste fiecare test prin a lua toate deckurile
-jucatorilor si toate meciurile.
+**AppManager** -> The class that prepares each test by taking all the players’ decks and all the matches.
 
-**GameManager** -> clasa care pregateste fiecare joc si ruleaza actiunile date
-la input. GameManager se ocupa si de retinerea elementelor dintr-un joc:
-cartile de pe masa, cartile din mana jucatorilor, eroii, playerul care isi
-joaca tura intr-un moment dat, mana care trebuie data fiecarui jucator etc.
+**GameManager** -> The class that prepares each game and runs the actions given in the input. 
+GameManager also handles storing the elements of a game: the cards on the table, the cards in 
+the players’ hands, the heroes, the player whose turn it is at a given moment, the hand that 
+must be dealt to each player, etc.
 
-In plus, am creat alte clase pentru a modulariza afisarea si tratarea cazurilor
-invalide:
+In addition, I created other classes to modularize output printing and the handling of invalid cases:
 
-**DebugCommands** -> are o singura functie statica in care tratez comenzile de
-debug. Pentru cateva din cazuri a trebuit sa clonez outputul deoarece aveam
-nevoie de o copie a referintei pentru a afisa statutul unui obiect la un
-moment dat.
+**DebugCommands** -> Has a single static function where I handle the debug commands. For some cases,
+I had to clone the output because I needed a copy of the reference in order to display the status
+of an object at a given moment.
 
-**Conditions** -> este o clasa care contine functii de test pentru anumite
-conditii din joc (verifica daca un player are un tank, daca cartea HeartHound
-poate fi folosita etc.)
+**Conditions** -> A class that contains test functions for certain game conditions, such as checking 
+whether a player has a tank, whether the HeartHound card can be used, etc.
 
-**PrintOutput** -> clasa ajutatoare pe care o folosesc sa afisez outputurile
-destul de usor. Are multi constructori care sunt folositi in fuctie de ce vreau
-sa afisez la output.
+**PrintOutput** -> A helper class that I use to print outputs fairly easily. It has many constructors,
+which are used depending on what I want to display in the output.
 
-**PrintErrors** -> contine functii care se apeleaza atunci cand avem cazuri
-invalide.
+**PrintErrors** -> Contains functions that are called when invalid cases occur.
 
-Clasa Card contine informatii universale pentru fiecare clasa ce o mosteneste:
-Clasele minion, environment si hero mostenesc clasa Card plus faptul ca fiecare
-contine functii pentru rularea comenzilor din input specifice lor (clasa minion
-are implementata functiile placeCard, attack si useAbility).
+The Card class contains universal information for every class that inherits from it. The Minion, 
+Environment, and Hero classes inherit from the Card class, and each of them contains functions 
+for running the input commands specific to them. For example, the Minion class implements the 
+placeCard, attack, and useAbility functions.
 
-Mai jos am atasat o poza in care se pot vedea totate clasele legate de cartile
-de joc.
+Below, I attached an image where all the classes related to the game cards can be seen.
 
 <div align="center"><img src="img/package.png" width="500px"></div>
 
